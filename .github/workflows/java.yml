@@ -1,4 +1,4 @@
-name: Java CI
+name: TurnoYa CI
 
 on:
   push:
@@ -6,13 +6,14 @@ on:
       - main
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Descargar proyecto
+      - name: Descargar código
         uses: actions/checkout@v4
 
       - name: Configurar Java
@@ -21,7 +22,5 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Compilar proyecto
-        run: |
-          echo "Proyecto Java funcionando"
-          javac src/*.java
+      - name: Ejecutar pruebas
+        run: mvn test
