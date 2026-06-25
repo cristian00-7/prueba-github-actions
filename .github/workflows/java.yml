@@ -13,7 +13,7 @@ jobs:
 
     steps:
 
-      - name: Descargar código
+      - name: Descargar proyecto
         uses: actions/checkout@v4
 
       - name: Configurar Java
@@ -22,5 +22,5 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Ejecutar pruebas
+      - name: Compilar proyecto
         run: mvn test
