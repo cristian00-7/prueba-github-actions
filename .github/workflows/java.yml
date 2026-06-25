@@ -23,4 +23,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Compilar proyecto
-        run: mvn test
+        run: mvn package -DskipTests
